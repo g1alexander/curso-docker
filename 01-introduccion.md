@@ -87,3 +87,25 @@ La virutalizacion nos permite atacar los 3 grandes problemas del desarrollo de s
 <img src="https://www.redeszone.net/app/uploads-redeszone.net/2016/02/docker-vs-virtual-machines.png"/>
 
 ---
+
+## Docker
+
+<img src="https://ualmtorres.github.io/SeminarioDockerPresentacion/images/DockerEngine.png"/>
+
+Componentes DENTRO del circulo de Docker:
+
+- Docker daemon: Es el centro de docker, el corazón que gracias a el, podemos comunicarnos con los servicios de docker.
+
+- REST API: Como cualquier otra API, es la que nos permite visualizar docker de forma “gráfica”.
+
+- Cliente de docker: Gracias a este componente, podemos comunicarnos con el corazón de docker (Docker Daemon) que por defecto es la línea de comandos.
+
+Dentro de la arquitectura de Docker encontramos:
+
+- Contenedores: Es la razón de ser de Docker, es donde podemos encapsular nuestras imagenes para llevarlas a otra computadora, o servidor, etc.
+
+- Imagenes: Son las encapsulaciones de x contenedor. Podemos correr nuestra aplicación en Java por medio de una imagen, podemos utilizar Ubuntu para correr nuestro proyecto, etc.
+
+- Volumenes de datos: Podemos acceder con seguridad al sistema de archivos de nuestra máquina.
+
+- Redes: Son las que permiten la comunicación entre contenedores.
