@@ -135,3 +135,9 @@ Estas capas son inmutables y con esto docker se asegura de que cuando se constru
 Los contras de esto es que cada comando que se coloca en el **Dockerfile** es una capa nueva de una imagen, asi que debemos tener un control a la ahora de correr los comandos en Dockerfile
 
 Una herramienta super util para visualizar las capas que hay en una imagen es [**Dive**](https://github.com/wagoodman/dive)
+
+```
+tab
+
+ctrol + u
+```
