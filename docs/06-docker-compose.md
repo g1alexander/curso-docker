@@ -77,6 +77,11 @@ docker-compose logs [service]
 docker-compose exec [service] [command]
 ```
 
+```bash
+#escalo dos instancias de app, previamente tengo que definir un rango de puertos en el archivo compose
+docker-compose up -d --scale [name_container]=2
+```
+
 ---
 
 ## docker compose override
@@ -88,4 +93,33 @@ Esto nos permite personalizar o hacer pequeños cambios propios para nuestro amb
 
 Articulo es para ampliar mas esta informacion: [**link**](https://medium.com/it-dead-inside/making-sense-of-docker-compose-overrides-efb757460d64)
 
-Acabe mencionar tambien que podemos tener varios ambientes para manejar el archivo docker.compose.yml (desarrollo, produccion, etc.. explicado en el articulo)
+cabe mencionar que se puede tener diferentes overrides por entorno, por ejemplo:
+
+- **docker-compose.override.yml** para development
+
+- **docker-compose.staging.yml** para staging
+
+- **docker-compose.production.yml** para production
+
+Y debes correrlos de la siguiente forma:
+
+```bash
+# para development:
+docker-compose up
+```
+
+```bash
+# para staging:
+docker-compose \
+	-f docker-compose.ym \
+	-f docker-compose.staging.yml \
+	up
+```
+
+```bash
+# para production:
+docker-compose \
+	-f docker-compose.yml \
+	-f docker-compose.production.yml \
+	up
+```
