@@ -76,3 +76,16 @@ docker-compose logs [service]
 #correr comando de un contenedor
 docker-compose exec [service] [command]
 ```
+
+---
+
+## docker compose override
+
+**docker-compose.override.yml** es un archivo que se encarga de sobreescribir tu configuración de docker-compose.yml , se puede usar para tener segura tu configuración y para no guardar los cambios en el repositorio de git.
+Un equivalente podría ser los archivos de declaración de variables de entorno, donde hay un archivo .env declarando su nombre y valor, y hay una copia .env.example con solo las variables sin valor. En .gitignore se declara que los cambios en .env no serán guardados, pero mandamos el archivo de ejemplo al repositorio.
+
+Esto nos permite personalizar o hacer pequeños cambios propios para nuestro ambiente sobre el original sin alterar ese archivo.
+
+Articulo es para ampliar mas esta informacion: [**link**](https://medium.com/it-dead-inside/making-sense-of-docker-compose-overrides-efb757460d64)
+
+Acabe mencionar tambien que podemos tener varios ambientes para manejar el archivo docker.compose.yml (desarrollo, produccion, etc.. explicado en el articulo)
