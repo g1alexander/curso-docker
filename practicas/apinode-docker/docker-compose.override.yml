@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  app:
+    # construir un servicio
+    build: .
+    #agrega mas variable de entorno aparte de las del archivo principal docker-compose.yml
+    environment:
+      UNA_VARIABLE: "Hola platzi"

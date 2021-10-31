@@ -1,14 +1,33 @@
-version: "3.8"
+# Versión del compose file
+version: "3.9"
 
+# Servicios que componen nuestra aplicación.
+## Un servicio puede estar compuesto por uno o más contenedores.
 services:
+  # nombre del servicio.
   app:
-    image: platziapp
+    # Imagen a utilizar.
+    image: apinode
+
+    # Declaración de variables de entorno.
     environment:
       MONGO_URL: "mongodb://db:27017/test"
+
+    # Indica que este servicio depende de otro, en este caso DB.
+    # El servicio app solo iniciara si el servicio se inicia correctamente.
     depends_on:
       - db
-    ports:
-      - "3000:3000"
 
+    # Puerto del contenedor expuesto, se el puede asignar para que escuche en mas puerto, al hacer esto estaran en contenedores aparte (muy util para escalar aplicaciones).
+    ports:
+      - "3000-3001:3000"
+
+    # Volumen para compartir los archivos del contenedor con mi maquina (el proeycto).
+    #es muy importante especificar que no sobreescriba el node_modules porque no funcionaria el proeyecto
+    volumes:
+      - ".:/usr/src"
+      - "/usr/src/node_modules"
+
+  #servicio principal, en este caso la base de datos mongo. en dado caso que no se incialice correctamente, el servicio app no iniciará.
   db:
     image: mongo

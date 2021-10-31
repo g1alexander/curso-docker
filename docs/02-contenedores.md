@@ -51,6 +51,11 @@ docker rename hello-platzi hola-platzy (cambio el nombre de hello-platzi a hola-
 ```
 
 ```bash
+#parar todos los contenedores
+docker stop $(docker ps -a -q)
+```
+
+```bash
 docker rm <ID o nombre> (borro un contenedor)
 ```
 
